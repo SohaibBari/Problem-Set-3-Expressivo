@@ -27,6 +27,7 @@ public class Main {
      * @param args unused
      * @throws IOException if there is an error reading the input
      */
+	/*
     public static void main(String[] args) throws IOException {
         final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         Optional<String> currentExpression = Optional.empty();
@@ -108,6 +109,22 @@ public class Main {
         public CommandSyntaxException(String message) {
             super(message);
         }
-    }
+    }*/
+	
+	public static void main(String[] args) {
+		Expression V1 = new Variable("x");
+		Expression V2 = new Variable("y");
+		Expression V3 = new Variable("z");
+		Expression M1 = new Multiplication(V2,V3);
+		Expression A1 = new Addition(V1,M1);
+		System.out.println(A1.toString());
+		System.out.println(A1.hashCode());
+		Expression Va1 = new Variable("x");
+		Expression Va2 = new Variable("y");
+		Expression Va3 = new Variable("z");
+		Expression Ma1 = new Multiplication(V2,V3);
+		Expression Aa1 = new Addition(V1,M1);
+		System.out.println(Aa1.hashCode());
+	}
     
 }
