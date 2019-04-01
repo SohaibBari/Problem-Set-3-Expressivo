@@ -155,6 +155,36 @@ public class ExpressionTest {
     	
     }
     
+    @Test
+    public void testHashcode() {
+    	Expression e1= new Variable("x");
+    	Expression e2= new Variable("y");
+    	Expression e3= new Variable("z");
+    	Expression Mul1= new Multiplication(e1,e2);
+    	Expression Add1= new Addition(e3,Mul1);
+    	int hashcode1= Add1.hashCode();
+    	Expression ex1= new Variable("x");
+    	Expression ex2= new Variable("y");
+    	Expression ex3= new Variable("z");
+    	Expression Mul2= new Multiplication(ex1,ex2);
+    	Expression Add2= new Addition(ex3,Mul2);
+    	int hashcode2= Add2.hashCode();
+    	
+    	assertEquals(hashcode1, hashcode2);
+    
+    }
+
+
+    @Test
+    public void testtoString() {
+    	Expression var1= new Variable("x");
+    	Expression var2= new Variable("y");
+    	Expression var3= new Variable("z");
+    	Expression Mul= new Multiplication(var1,var2);
+    	Expression Add= new Addition(Mul,var3);
+    	String str="x*y+z";
+    	assertEquals(str, Add.toString());
+    }
     
     
 }
