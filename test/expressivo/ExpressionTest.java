@@ -39,16 +39,13 @@ public class ExpressionTest {
     }
     @Test
     public void testTree() {
-    	Expression V1= new Variable("x");
+    	Expression V1= new Value(5);
     	Expression V2= new Variable("y");
     	Expression V3= new Variable("z");
     	Expression M1= new Multiplication(V2,V3);
     	Expression A1 = new Addition(V1,M1);
     	
-    	
-    	
-    	String x= "x+y*z";
-        assertEquals("empty expression", "x+y*z", A1.toString());
+        assertEquals("empty expression", "5+y*z", A1.toString());
     	
     }
     
