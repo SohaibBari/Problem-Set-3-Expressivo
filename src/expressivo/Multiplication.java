@@ -36,6 +36,6 @@ public class Multiplication implements Expression{
 	     */
 	@Override
 	public int hashCode() {
-		return 7*left.hashCode()+ 7*right.hashCode();
+		return this.toString().hashCode();
 	}
 }

@@ -36,6 +36,6 @@ public class Addition implements Expression{
 	     */
 	@Override
 	public int hashCode() {
-		return 13*left.hashCode()+ 13*right.hashCode();
+		return this.toString().hashCode();
 	}
 }
